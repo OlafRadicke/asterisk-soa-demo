@@ -1,0 +1,20 @@
+// config example
+
+{
+  // currently IP and port are specified as simple values
+  appIp: "0.0.0.0",
+  appPort: 8001,
+  domain: "localhost",
+  // set the runtime for sessions in seconds
+  sessionRuntime: 1000,
+  logging: {
+    //file: "peruschim.log",
+    rootlogger: "I",
+    logger: {
+       "*" : "DEBUG"
+    }
+  }
+
+}
+
+// vim:syntax=javascript

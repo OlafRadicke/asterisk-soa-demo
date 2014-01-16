@@ -1,0 +1,132 @@
+<#
+Copyright (C) 2013  Olaf Radicke <briefkasten@olaf-rdicke.de>
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or later
+version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
+
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+#>
+
+<%request
+    include="Core/controller/StausController.h">
+        StatusController  statusController();
+</%request>
+<%cpp>
+    statusController.worker(
+        request,
+        reply,
+        qparam
+    );
+</%cpp>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Status</title>
+    <meta charset = "UTF-8" />
+    <link
+        rel="stylesheet"
+        href="/Core/resources/style.css"
+        type="text/css"
+        media="only screen and (min-width: 800px), only screen and (min-device-width : 800px)" />
+</head>
+<body>
+% // Info-Dialog
+% if ( statusController.feedback != "" ) {
+            <div class="feedback-box">
+                <b><$ statusController.feedback $> </b>
+            </div>
+% }
+
+<form accept-charset="UTF-8"  method="get">
+<!--    <h1>RAUM: <i><%= @roomName %></i></h1>-->
+
+    <br class="clearall">
+    <div class="column3">
+        <div class="innerbox" >
+            <h2>Besprechungsraum</h2>
+            <ul>
+            <% @workplaces.each do |i| %>
+                <% if i["room"] == "besprechungsraum"  %>
+                    <% if i["status"] != "off"  %>
+                        <li><span class="workplacesid"><%= "#{i["workplaces_id"]}" %>:</span><input class="offair" name="on_off" type="submit" value="ON AIR" /></li>
+                    <% else  %>
+                        <li><span class="workplacesid"><%= "#{i["workplaces_id"]}" %>:</span><input class="onair" name="on_off" type="submit" value="off" /></li>
+                    <% end  %>
+                <% end  %>
+            <% end  %>
+            </ul>
+        </div>
+
+        <div class="innerbox" >
+            <h2>Support</h2>
+            <ul>
+            <% @workplaces.each do |i| %>
+                <% if i["room"] == "support"  %>
+                    <% if i["status"] != "off"  %>
+                        <li><span class="workplacesid"><%= "#{i["workplaces_id"]}" %>:</span><input class="offair" name="on_off" type="submit" value="ON AIR" /></li>
+                    <% else  %>
+                        <li><span class="workplacesid"><%= "#{i["workplaces_id"]}" %>:</span><input class="onair" name="on_off" type="submit" value="off" /></li>
+                    <% end  %>
+                <% end  %>
+            <% end  %>
+            </ul>
+        </div>
+
+        <div class="innerbox" >
+            <h2>Entwicklung</h2>
+            <ul>
+            <% @workplaces.each do |i| %>
+                <% if i["room"] == "entwicklung"  %>
+                    <% if i["status"] != "off"  %>
+                        <li><span class="workplacesid"><%= "#{i["workplaces_id"]}" %>:</span><input class="offair" name="on_off" type="submit" value="ON AIR" /></li>
+                    <% else  %>
+                        <li><span class="workplacesid"><%= "#{i["workplaces_id"]}" %>:</span><input class="onair" name="on_off" type="submit" value="off" /></li>
+                    <% end  %>
+                <% end  %>
+            <% end  %>
+            </ul>
+        </div>
+
+        <div class="innerbox" >
+            <h2>Vertrieb</h2>
+            <ul>
+            <% @workplaces.each do |i| %>
+                <% if i["room"] == "vertrieb"  %>
+                    <% if i["status"] != "off"  %>
+                        <li><span class="workplacesid"><%= "#{i["workplaces_id"]}" %>:</span><input class="offair" name="on_off" type="submit" value="ON AIR" /></li>
+                    <% else  %>
+                        <li><span class="workplacesid"><%= "#{i["workplaces_id"]}" %>:</span><input class="onair" name="on_off" type="submit" value="off" /></li>
+                    <% end  %>
+                <% end  %>
+            <% end  %>
+            </ul>
+        </div>
+
+        <div class="innerbox" >
+            <h2>Consulting</h2>
+            <ul>
+            <% @workplaces.each do |i| %>
+                <% if i["room"] == "consulting"  %>
+                    <% if i["status"] != "off"  %>
+                        <li><span class="workplacesid"><%= "#{i["workplaces_id"]}" %>:</span><input class="offair" name="on_off" type="submit" value="ON AIR" /></li>
+                    <% else  %>
+                        <li><span class="workplacesid"><%= "#{i["workplaces_id"]}" %>:</span><input class="onair" name="on_off" type="submit" value="off" /></li>
+                    <% end  %>
+                <% end  %>
+            <% end  %>
+            </ul>
+        </div>
+        <br>
+    </div>
+
+<form accept-charset="UTF-8"  method="get">
+</body>
+</html>

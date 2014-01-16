@@ -1,0 +1,64 @@
+Zusammenfassung
+---------------
+
+TntSOA ist ein Demo um zu zeigen wie man mit Tntnet eine SOA (service-oriented
+architecture) implementiert.
+
+Die Anwendung teilt sich in eine Webfrontend und in ein Backend, das eine
+Funktionalität über eine XML-RPC-Schnittstelle anbietem.
+
+Die Anwendung dient dazu in einen Webfrontent darzustellen welche Mitarbeiter
+gerade in einem telefonischen Gespräch sind. Damit soll verhindert werden, das
+Mitarbeiter bei Kundengesprächen unnötig gestört werden und das unnötig
+auf die Beendigung des Telefonats gewartet werden muss, wenn Mitarbeiter das
+persönliche gespräch suchen.
+
+Die Implementierung siet so aus, das für das Webfrontend Tntnet verwendet wird.
+Für die Abfrage der Telefonanlage wird ein SOA-Dienst implementiert, der sich
+regelmäßig die Informationen von einer Asterisk-Telefonanlage holt und diese
+dann per XML-RPC-Schnittstelle zur Verführung stellt. Diese Schnittstelle wird
+von dem Frontend genutzt.
+
+Lizenz
+------
+
+GPLv3
+
+
+Autoren
+-------
+ * Olaf Radicke <breifkasten@olaf-radicke.de>
+
+Vorraussetzungen und Abhängigkeiten
+-----------------------------------
+
+* gcc-g++
+* tntnet
+* tntnet-devel
+* tntdb
+* autotools
+  * automake
+  * autoconf
+* libtool
+* sqlite
+* zlib-devel
+* openssl-devel
+
+
+Übersetzen der Software
+----------------------
+
+Die nötigen Schritte:
+
+  * Letzte Version von github holen (https://github.com/OlafRadicke/tntsoa)
+  * Im Basisiverzeichnis den Befehl "autoreconf -i" ausführen.
+  * Danach "./configure"
+  * Dann "make"
+
+Es werden dann zwei ausführbare Dateien erstellt...
+You get a binary in src/peruschim_cpp.
+
+
+
+
+
