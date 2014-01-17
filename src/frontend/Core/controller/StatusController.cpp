@@ -19,17 +19,18 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <Core/controller/AlterLogInController.h>
+#include <Core/controller/StatusController.h>
 #include <Core/manager/WebACL.h>
-#include <Core/models/UserSession.h>
+#include <Core/model/UserSession.h>
 
 #include <cxxtools/log.h>
 #include <tnt/httprequest.h>
 #include <tnt/httpreply.h>
 
-log_define("Core.AlterLogInController")
+namespace Core {
+log_define("Core.StatusController")
 
-void AlterLogInController::worker (
+void StatusController::worker (
     tnt::HttpRequest& request,
     tnt::HttpReply& reply,
     tnt::QueryParams& qparam)
@@ -59,6 +60,6 @@ void AlterLogInController::worker (
         };
     }
 }
-
+} //namespace Core 
 
 

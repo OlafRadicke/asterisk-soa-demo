@@ -22,7 +22,6 @@
 #ifndef ALTERLOGINCONTROLLER_H
 #define ALTERLOGINCONTROLLER_H
 
-#include <Core/model/WorkPlace.h>
 
 #include <cxxtools/utf8codec.h>
 #include <cxxtools/string.h>
@@ -32,27 +31,20 @@
 #include <tnt/httpreply.h>
 
 #include <iostream>
-#include <vector>
 
 
 namespace Core {
-class StatusController
+
+class WorkPlace
 {
 public:
-    StatusController();
+    WorkPlace();
 
-    void worker (
-        tnt::HttpRequest& request,
-        tnt::HttpReply& reply,
-        tnt::QueryParams& qparam
-    );
-
-    cxxtools::String feedback;
-    std::vector<cxxtools::String> roomNames;
-    std::vector<Core::WorkPlace> workPlaces;
-
+    cxxtools::String name;
+    cxxtools::String room;
 
 };
+
 } // namespace Core
 
 
