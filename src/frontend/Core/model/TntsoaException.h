@@ -1,8 +1,8 @@
 
 #include <stdexcept>
 
-#ifndef CORE_PERUSCHIMEXCEPTION_H
-#define CORE_PERUSCHIMEXCEPTION_H
+#ifndef CORE_TNTSOAEXCEPTION_H
+#define CORE_TNTSOAEXCEPTION_H
 
 /**
  * A exception class. This exception is help full to give more information
@@ -22,7 +22,7 @@ namespace Core {
                 : std::runtime_error( err_message ){}
     };
 
-} // end namespace RouteReverse
+} // end namespace 
 
 
 #endif

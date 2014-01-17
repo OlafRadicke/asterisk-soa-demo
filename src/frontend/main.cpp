@@ -23,13 +23,18 @@
 #include <tnt/configurator.h>
 #include <string>
 #include <cxxtools/log.h>
+#include <cxxtools/arg.h>
 
-log_define("TNTSOABACKEND")
+log_define("TNTSOAFRONTEND")
 
 int main ( int argc, char* argv[] )
 {
     try
     {
+
+        cxxtools::Arg<std::string>    configFilePath( argc, argv, 'c', "./tntsoafrontend.conf");
+        std::cout << "Use config: " << configFilePath.getValue() << std::endl;
+
         /* Read the config */
         Core:Config& config = Config::it();
         config.read();

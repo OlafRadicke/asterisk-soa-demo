@@ -50,13 +50,11 @@ Vorraussetzungen und Abhängigkeiten
 
 Die nötigen Schritte:
 
-  * Letzte Version von github holen (https://github.com/OlafRadicke/tntsoa)
-  * Im Basisiverzeichnis den Befehl "autoreconf -i" ausführen.
-  * Danach "./configure"
-  * Dann "make"
+Letzte Version von github holen (https://github.com/OlafRadicke/tntsoa). Das Frontend und das Backend sind in zwei autonome Verzeichnisse aufgeteilt. Mit einer der beiden Komponenten austauschbar bleibt.
 
-Es werden dann zwei ausführbare Dateien erstellt...
-You get a binary in src/peruschim_cpp.
+Zum übersetzen wechselt man jeweils entweder in das Verzeichnis src/backend oder in das src/frontend. Hier wird der  Befehl "autoreconf -i" ausgeführt. Dabei wird die Datei "./configure" generiert die ebenfalls ausgeführt wird. Danach wird der Befehl "make" ausgeführt. Nun hat man die Ausführbare Datei. Je nach Verzeichnis die "tntsoabackend" oder die "tntsoafrontend".
+
+
 
 
 
