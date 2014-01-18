@@ -20,6 +20,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         Core::StatusController  statusController();
 </%request>
 <%cpp>
+#include <cxxtools/string.h>
+
     statusController.worker(
         request,
         reply,
@@ -39,14 +41,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 </head>
 <body>
 % // Info-Dialog
-% if ( statusController.feedback != "" ) {
+% if ( statusController.feedback != cxxtools::String("") ) {
             <div class="feedback-box">
                 <b><$ statusController.feedback $> </b>
             </div>
 % }
-% for (i1=0; statusController.roomNames.size > i1; i1++) {
+% for ( unsigned int i1=0; statusController.roomNames.size() > i1; i1++) {
     <h1>RAUM: <i><$ statusController.roomNames[i1]  $></i></h1>
-%     for (i2=0; statusController.workPlaces.size > i2; i2++) {
+%     for ( unsigned int i2=0; statusController.workPlaces.size() > i2; i2++) {
 %         if ( statusController.workPlaces[i2].room != statusController.roomNames[i1] ) continue;
         <div><$ statusController.workPlaces[i2].name $> telefoniert gerade</div>
 %     }

@@ -19,18 +19,12 @@
 * along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#ifndef ALTERLOGINCONTROLLER_H
-#define ALTERLOGINCONTROLLER_H
+#ifndef CORE_WORKPLACE_H
+#define CORE_WORKPLACE_H
 
 
 #include <cxxtools/utf8codec.h>
 #include <cxxtools/string.h>
-#include <cxxtools/log.h>
-
-#include <tnt/httprequest.h>
-#include <tnt/httpreply.h>
-
-#include <iostream>
 
 
 namespace Core {
